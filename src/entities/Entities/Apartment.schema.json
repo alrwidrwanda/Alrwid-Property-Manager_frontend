@@ -1,0 +1,108 @@
+{
+  "name": "Apartment",
+  "type": "object",
+  "properties": {
+    "unit_number": {
+      "type": "string",
+      "description": "Unique unit identifier"
+    },
+    "block": {
+      "type": "string",
+      "enum": [
+        "BLOCK A",
+        "BLOCK B",
+        "BLOCK C"
+      ],
+      "description": "Building block identifier"
+    },
+    "floor": {
+      "type": "string",
+      "description": "Floor location (can be number, G, or B)"
+    },
+    "direction": {
+      "type": "string",
+      "enum": [
+        "East",
+        "West",
+        "North",
+        "South",
+        "East + West",
+        "North + South",
+        "East + North",
+        "West + South"
+      ],
+      "description": "Apartment direction/orientation"
+    },
+    "apartment_description": {
+      "type": "string",
+      "enum": [
+        "Studio",
+        "Penthouse",
+        "1 Bedroom",
+        "2 Bedroom",
+        "3 Bedroom",
+        "4 Bedroom",
+        "1 Bedroom (Terrace)",
+        "2 Bedroom (Terrace)",
+        "3 Bedroom (Terrace)"
+      ],
+      "description": "Type of apartment"
+    },
+    "area_sqm": {
+      "type": "number",
+      "description": "Area in square meters"
+    },
+    "description": {
+      "type": "string",
+      "description": "Detailed description of the unit"
+    },
+    "parking_spot": {
+      "type": "string",
+      "description": "Assigned parking spot number or location"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "available",
+        "reserved",
+        "sold"
+      ],
+      "default": "available",
+      "description": "Current status of the apartment"
+    },
+    "base_price": {
+      "type": "number",
+      "description": "Base selling price"
+    },
+    "currency": {
+      "type": "string",
+      "default": "USD",
+      "description": "Currency for pricing"
+    },
+    "bedrooms": {
+      "type": "integer",
+      "description": "Number of bedrooms"
+    },
+    "bathrooms": {
+      "type": "number",
+      "description": "Number of bathrooms"
+    },
+    "features": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Special features and amenities"
+    },
+    "image_url": {
+      "type": "string",
+      "description": "Main image URL"
+    }
+  },
+  "required": [
+    "unit_number",
+    "floor",
+    "area_sqm",
+    "status"
+  ]
+}

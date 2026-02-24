@@ -1,0 +1,48 @@
+{
+  "name": "Receipt",
+  "type": "object",
+  "properties": {
+    "payment_id": {
+      "type": "string",
+      "description": "Reference to Payment entity"
+    },
+    "sale_id": {
+      "type": "string",
+      "description": "Reference to Sale entity"
+    },
+    "file_url": {
+      "type": "string",
+      "description": "URL to uploaded receipt file"
+    },
+    "file_type": {
+      "type": "string",
+      "enum": [
+        "pdf",
+        "image"
+      ],
+      "description": "Type of uploaded file"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "available",
+        "pending"
+      ],
+      "default": "available",
+      "description": "Receipt availability status"
+    },
+    "upload_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of upload"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional notes"
+    }
+  },
+  "required": [
+    "file_url",
+    "status"
+  ]
+}

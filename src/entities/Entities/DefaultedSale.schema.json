@@ -1,0 +1,91 @@
+{
+  "name": "DefaultedSale",
+  "type": "object",
+  "properties": {
+    "original_sale_id": {
+      "type": "string",
+      "description": "Reference to original Sale entity ID"
+    },
+    "apartment_id": {
+      "type": "string",
+      "description": "Reference to Apartment entity"
+    },
+    "client_id": {
+      "type": "string",
+      "description": "Reference to Client entity"
+    },
+    "contract_number": {
+      "type": "string",
+      "description": "Contract reference number for this sale"
+    },
+    "contract_document_url": {
+      "type": "string",
+      "description": "URL to the uploaded signed contract document"
+    },
+    "sale_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Original date of sale"
+    },
+    "defaulted_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date when sale was marked as defaulted"
+    },
+    "total_price": {
+      "type": "number",
+      "description": "Total agreed price"
+    },
+    "currency": {
+      "type": "string",
+      "default": "USD",
+      "description": "Transaction currency"
+    },
+    "first_installment": {
+      "type": "number",
+      "description": "First installment amount"
+    },
+    "monthly_payment": {
+      "type": "number",
+      "description": "Monthly mortgage payment"
+    },
+    "payment_duration_months": {
+      "type": "integer",
+      "description": "Total payment duration in months"
+    },
+    "payment_frequency_months": {
+      "type": "integer",
+      "default": 1,
+      "description": "Payment frequency in months"
+    },
+    "total_paid": {
+      "type": "number",
+      "default": 0,
+      "description": "Total amount paid before default"
+    },
+    "payment_method": {
+      "type": "string",
+      "enum": [
+        "Cash",
+        "Installment"
+      ],
+      "description": "Payment method for this sale"
+    },
+    "defaulted_reason": {
+      "type": "string",
+      "description": "Reason for marking sale as defaulted"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional notes about the sale"
+    }
+  },
+  "required": [
+    "original_sale_id",
+    "apartment_id",
+    "client_id",
+    "sale_date",
+    "defaulted_date",
+    "total_price"
+  ]
+}

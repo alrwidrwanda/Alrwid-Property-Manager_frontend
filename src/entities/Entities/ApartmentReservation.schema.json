@@ -1,0 +1,37 @@
+{
+  "name": "ApartmentReservation",
+  "type": "object",
+  "properties": {
+    "apartment_id": {
+      "type": "string",
+      "description": "Reference to Apartment entity"
+    },
+    "non_client_name": {
+      "type": "string",
+      "description": "Name of the person reserving the apartment"
+    },
+    "reservation_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of reservation"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "cancelled"
+      ],
+      "default": "active",
+      "description": "Reservation status"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional notes about the reservation"
+    }
+  },
+  "required": [
+    "apartment_id",
+    "non_client_name",
+    "reservation_date"
+  ]
+}
