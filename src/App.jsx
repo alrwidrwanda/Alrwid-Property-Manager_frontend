@@ -16,7 +16,7 @@ const queryClient = new QueryClient()
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <BrowserRouter>
+      <BrowserRouter basename="/Alrwid-Property-Manager_frontend">
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Navigate to="/Dashboard" replace />} />
